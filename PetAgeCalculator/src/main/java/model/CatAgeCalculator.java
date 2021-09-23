@@ -7,8 +7,12 @@ package model;
  */
 public class CatAgeCalculator extends PetAgeCalculator{
 	
-	private int catMultiplier = 4;
-
+	private int catMultiplier = 4;//the rate at which a cat ages for every year beyond the first two
+	
+	/**
+	 * This constructor sets the multiplier in the super class
+	 * @param years user input years
+	 */
 	public CatAgeCalculator(int years) {
 		this.setUserYears(years);
 		this.setYearMultiplier(catMultiplier);

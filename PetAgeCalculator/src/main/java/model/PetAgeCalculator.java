@@ -2,21 +2,29 @@ package model;
 
 /**
  * @author Amy Miles - almiles CIS 175 - Fall 2021 Sep 23, 2021
+ * This class creates the PetAgeCalculator and calculates the age of the pet converting user input
  */
 public class PetAgeCalculator {
-	private int yearOne = 15;
-	private int yearTwo = 9;
-	private int yearMultiplier;
-	private int userYears;
-	private int petAgeResult;
-
+	private int yearOne = 15;//first year is equivalent to 15 human years
+	private int yearTwo = 9;//second year is equivalent to 9 human years
+	private int yearMultiplier;//this is set in the child classes, represents the number of years you multiply beyond those first two years
+	private int userYears; //user input years
+	private int petAgeResult;//result of pet age to human age calculation
+	
+	/**
+	 * Default no-arg constructor
+	 */
 	public PetAgeCalculator() {
 
 	}
-
+	
+	/**
+	 * Constructor that creates a Calculator
+	 * @param years the user years 
+	 */
 	public PetAgeCalculator(int years) {
 		this.userYears = years;
-		petAgeResult = calculatePetAge(years);
+		petAgeResult = calculatePetAge(years);//calls method to set the petAgeResult
 	}
 
 	/**
@@ -95,6 +103,13 @@ public class PetAgeCalculator {
 				+ ", userYears=" + userYears + ", petAgeResult=" + petAgeResult + "]";
 	}
 	
+	/**
+	 * this method calculates the pet's age in human years. 
+	 * The first year is equal to 15 years, the second to 9 years, and beyond, at a rate set 
+	 * by the child classes. 
+	 * @param years the user input years
+	 * @return total the result of the calculation
+	 */
 	public int calculatePetAge(int years) {
 		int total = 0;
 		if (userYears == 1) {

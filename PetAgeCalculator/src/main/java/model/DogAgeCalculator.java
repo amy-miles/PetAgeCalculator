@@ -7,9 +7,12 @@ package model;
  */
 public class DogAgeCalculator extends PetAgeCalculator{
 	
-	private int dogMultiplier = 5;	
+	private int dogMultiplier = 5;//the rate at which a dog ages after the first two years	
 
-	
+	/**
+	 * Thsi constructor is used to set the multiplier in the super class
+	 * @param years user input years
+	 */
 	public DogAgeCalculator(int years) {
 		this.setUserYears(years);
 		this.setYearMultiplier(dogMultiplier);
